@@ -1,0 +1,49 @@
+#hroles{
+	text-align: center;
+}
+
+#hlistar{
+    text-align: center;
+}
+
+#divnuevo{
+	width: 50%;
+	text-align: center;
+}
+#anuevo{
+	background-color: #21211d;
+  	color: #FFF;
+  	padding: 10px;
+  	border-radius: 10px;
+  	text-decoration: none;
+  	cursor: pointer;
+}
+#roles{	
+	width: 60%;
+	height: 40px;
+	margin: 0 auto;
+	padding: 10px;
+
+}
+table,th,td{
+     border: 1px solid black;
+     border-collapse: collapse;
+}
+
+
+#aeditar{
+	background-color: #6460E8;
+  	color: #FFF;
+  	padding: 5px;
+  	border-radius: 10px;
+  	text-decoration: none;
+  	cursor: pointer;
+}
+#aeliminar{
+	background-color: #F93023;
+  	color: #FFF;
+  	padding: 5px;
+  	border-radius: 10px;
+  	text-decoration: none;
+  	cursor: pointer;
+}
