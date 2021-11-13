@@ -4,8 +4,8 @@
 	<title>Mision</title>
 </head>
 <body>
-	<p>Mision</p>
-	<p>Proporcionar informacion al mundo</p>
+	<h1>Mision</h1>
+	<p>Proporcionar informacion al mundo del maincra</p>
 
 </body>
 </html>

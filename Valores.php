@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+git<!DOCTYPE html>
 <html>
 <head>
 	<title>Valores</title>
 </head>
 <body>
-	<p>Valores</p>
+	<h1>Valores</h1>
 	<p>Implementar seguridad y conciencia a nuestros usuarios</p>
 
 </body>
