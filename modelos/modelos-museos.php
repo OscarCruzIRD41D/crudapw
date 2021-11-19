@@ -3,21 +3,22 @@
 class usuario 
 {
 	//Atributos=Variables
-	public $id_materias;
+	public $id_museos;
 	public $nombre;
-	public $alumnos;	
-	public $maestro;
-	public $horas;
+	public $op1;	
+	public $op2;
+	public $op3;
 	private $conexion;
 	
+    
 	//Constructor
 	public function __construct () 
 	{
-		$this->id_materias = 0;
+		$this->id_usuario = 0;
 		$this->nombre ='';
-		$this->alumnos='';	
-		$this->maestro='';
-		$this->horas=0;	
+		$this->op1=0;	
+		$this->op2=0;
+		$this->op3=0;	
 		$this->conexion = new Conexion();
 	}
 
@@ -27,7 +28,7 @@ class usuario
 		try
 		{
 			$conexion = new Conexion ();
-			$listado = $conexion->consultar('SELECT * FROM tbl_materias');
+			$listado = $conexion->consultar('SELECT * FROM tbl_museos');
 			$conexion->cerrar();
 			return $listado;
 	  }
@@ -37,17 +38,16 @@ class usuario
 		}
 	}
 
-	public static function obtenerPorId ($id_materias) 
+	public static function obtenerPorId ($id_museos) 
 	{
 		$conexion = new Conexion ();
-		$listado = $conexion->consultar("SELECT * FROM tbl_materias WHERE Id_materias = $id_materias");
+		$listado = $conexion->consultar("SELECT * FROM tbl_museos WHERE Id_museos = $id_museos");
 		$conexion->cerrar();
 		return $listado[0];
 	}
-
 	public function ingresar () 
 	{		
-		$s = "INSERT INTO tbl_materias (nombre,alumnos,maestro,horas) VALUES ('$this->nombre'".",'$this->alumnos'".",'$this->maestro','$this->horas')";
+		$s = "INSERT INTO tbl_museos (Nombre,op1,op2,op3) VALUES ('$this->nombre'".",'$this->op1'".",'$this->op2','$this->op3')";
 		//echo $s;
 		$resultado = $this->conexion->actualizar($s);
 		$this->conexion->cerrar();
@@ -56,7 +56,7 @@ class usuario
 
 	public function eliminar () 
 	{
-		$s = "DELETE FROM tbl_materias WHERE id_materias = $this->id_materias";
+		$s = "DELETE FROM tbl_museos WHERE id_museos = $this->id_museos";
 		echo $s;
 		$resultado = $this->conexion->actualizar($s);
 		$this->conexion->cerrar();
@@ -65,7 +65,7 @@ class usuario
 
 	public function editar () 
 	{
-		$s = "UPDATE tbl_materias SET Nombre = '$this->nombre'".",alumnos= '$this->alumnos'".",maestro='$this->maestro',horas= '$this->horas' WHERE id_materias = $this->id_materias";
+		$s = "UPDATE tbl_museos SET Nombre = '$this->nombre'".",op1= '$this->op1'".",op2='$this->op2',op3= '$this->op3' WHERE id_museos = $this->id_museos";
 		//echo $s;
 		$resultado = $this->conexion->actualizar($s);
 		$this->conexion->cerrar();

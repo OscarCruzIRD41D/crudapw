@@ -3,21 +3,20 @@
 class usuario 
 {
 	//Atributos=Variables
-	public $id_materias;
+	public $id_oficios;
 	public $nombre;
-	public $alumnos;	
-	public $maestro;
+	public $paga;	
 	public $horas;
+	public $jefe;
 	private $conexion;
-	
 	//Constructor
 	public function __construct () 
 	{
-		$this->id_materias = 0;
+		$this->id_oficios = 0;
 		$this->nombre ='';
-		$this->alumnos='';	
-		$this->maestro='';
-		$this->horas=0;	
+		$this->paga=0;	
+		$this->horas=0;
+		$this->jefe='';	
 		$this->conexion = new Conexion();
 	}
 
@@ -27,7 +26,7 @@ class usuario
 		try
 		{
 			$conexion = new Conexion ();
-			$listado = $conexion->consultar('SELECT * FROM tbl_materias');
+			$listado = $conexion->consultar('SELECT * FROM tbl_oficios');
 			$conexion->cerrar();
 			return $listado;
 	  }
@@ -37,17 +36,17 @@ class usuario
 		}
 	}
 
-	public static function obtenerPorId ($id_materias) 
+	public static function obtenerPorId ($id_oficios) 
 	{
 		$conexion = new Conexion ();
-		$listado = $conexion->consultar("SELECT * FROM tbl_materias WHERE Id_materias = $id_materias");
+		$listado = $conexion->consultar("SELECT * FROM tbl_oficios WHERE Id_oficios = $id_oficios");
 		$conexion->cerrar();
 		return $listado[0];
 	}
 
 	public function ingresar () 
 	{		
-		$s = "INSERT INTO tbl_materias (nombre,alumnos,maestro,horas) VALUES ('$this->nombre'".",'$this->alumnos'".",'$this->maestro','$this->horas')";
+		$s = "INSERT INTO tbl_oficios (Nombre,paga,horas,jefe) VALUES ('$this->nombre'".",'$this->paga'".",'$this->horas','$this->jefe')";
 		//echo $s;
 		$resultado = $this->conexion->actualizar($s);
 		$this->conexion->cerrar();
@@ -56,7 +55,7 @@ class usuario
 
 	public function eliminar () 
 	{
-		$s = "DELETE FROM tbl_materias WHERE id_materias = $this->id_materias";
+		$s = "DELETE FROM tbl_oficios WHERE id_oficios = $this->id_oficios";
 		echo $s;
 		$resultado = $this->conexion->actualizar($s);
 		$this->conexion->cerrar();
@@ -65,10 +64,16 @@ class usuario
 
 	public function editar () 
 	{
-		$s = "UPDATE tbl_materias SET Nombre = '$this->nombre'".",alumnos= '$this->alumnos'".",maestro='$this->maestro',horas= '$this->horas' WHERE id_materias = $this->id_materias";
+		$s = "UPDATE tbl_oficios SET Nombre = '$this->nombre'".",paga= '$this->paga'".",horas='$this->horas',jefe='$this->jefe' WHERE id_oficios = $this->id_oficios";
 		//echo $s;
 		$resultado = $this->conexion->actualizar($s);
 		$this->conexion->cerrar();
 		return $resultado;
 	}
+    
+    public function Agregar()
+    {
+      ingresar();
+     
+    }
 }

@@ -14,25 +14,23 @@ if ($accion != '') {
 			$objUsuario->alumnos= $_POST['alumnos'];
 			$objUsuario->maestro= $_POST['maestro'];
 			$objUsuario->horas= $_POST['horas'];
-			$objUsuario->ingresar();
-			header('Location: ../vistas/museos/index.php');            
+			$objUsuario->ingresar();            
 			break;
 		case 'Editar':
-			$objUsuario->id_usuario= base64_decode($_POST['id_usuario']);
+			$objUsuario->id_materias= base64_decode($_POST['id_materias']);
 			$objUsuario->nombre = $_POST['nombre'];
-			$objUsuario->alumnos=$_POST['alumnos'];
+			$objUsuario->alumnos= $_POST['alumnos'];
 			$objUsuario->maestro= $_POST['maestro'];
 			$objUsuario->horas= $_POST['horas'];
 			$objUsuario->editar();
-			header('Location: ../vistas/museos/index.php');
+
 			break;
 		case 'elim':
 		//echo $_GET['id_usuario'];
 
-			$objUsuario->id_usuario = base64_decode($_GET['id_usuario']);
-			$objUsuario->eliminar()
-			header('Location: ../vistas/usuarios');;
+			$objUsuario->id_materias = base64_decode($_GET['id_materias']);
+			$objUsuario->eliminar();
 			break;
 	}
 }
-//header('Location: ../vistas/usuarios/index.php');
+header('Location: ../vistas/materias/index.php');
