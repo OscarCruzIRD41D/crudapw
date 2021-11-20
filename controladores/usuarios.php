@@ -21,7 +21,6 @@ if ($accion != '') {
 			$objUsuario->usuario=$_POST['usuario'];
 			$objUsuario->contrasena= $_POST['contrasena'];
 			$objUsuario->editar();
-
 			break;
 		case 'elim':
 		//echo $_GET['id_usuario'];
@@ -42,4 +41,4 @@ if ($accion != '') {
 			break;
 	}
 }
-header('Location: ../vistas/usuarios/index.php');
+//header('Location: ../vistas/usuarios/index.php');
