@@ -43,3 +43,4 @@ if ($accion != '') {
 }
 //header('Location: ../vistas/usuarios/index.php');
 //GG
+//no sale la wea profe
