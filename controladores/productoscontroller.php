@@ -33,3 +33,4 @@ if ($accion != '') {
 	}
 }
 header('Location: ../vistas/productos/index.php');
+//bienbenido a prroductos controller :3
